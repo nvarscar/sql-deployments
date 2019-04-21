@@ -10,7 +10,6 @@ pipeline {
   stages {
     stage('Deploy CI DB') {
       steps {
-        step([$class: 'WsCleanup'])
         powershell """
             \$password = 'dbatools.IO'
             \$sPassword = ConvertTo-SecureString \$password -AsPlainText -Force
